@@ -1,0 +1,173 @@
+﻿<div class="row">
+
+    <div>
+        <button ui-sref="root.dashboard" class="btn btn-link" data-toggle="tooltip" data-placement="right" title="Back"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    </div>
+
+    <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">User Profile</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" ng-submit="updateProfile()">
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Username :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control" ng-model="model.UserName" required="required" readonly="readonly" ng-disabled="true" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">First Name :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control" ng-model="model.FirstName" required="required"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Last Name :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control"  ng-model="model.LastName" required="required"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Email :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control" ng-model="model.Email" required="required"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Phone :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control" ng-model="model.PhoneNumber" required="required"/>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">&nbsp;</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <button type="submit" class="btn btn-floating btn-info">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+
+    <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Change Password</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" ng-submit="updatePassword()">
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Current Password :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="password" class="form-control" ng-model="model.CurrentPassword" required="required"  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">New Password :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="password" class="form-control" ng-model="model.NewPassword" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Retype Password :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="password" class="form-control"  ng-model="model.RetypePassword" required="required" />
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">&nbsp;</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <button  type="submit" class="btn btn-floating btn-info">Update Password</button>                   
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+
+
+    <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sheena Kristin A.Eschor</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                    <div class=" col-md-9 col-lg-9 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                                <tr>
+                                    <td>Department:</td>
+                                    <td>Programming</td>
+                                </tr>
+                                <tr>
+                                    <td>Hire date:</td>
+                                    <td>06/23/2013</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td>01/24/1988</td>
+                                </tr>
+
+                                <tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>Home Address</td>
+                                    <td>Metro Manila,Philippines</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><a href="mailto:info@support.com">info@support.com</a></td>
+                                </tr>
+                            <td>Phone Number</td>
+                            <td>
+                                123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                            </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <a href="#" class="btn btn-primary">My Sales Performance</a>
+                        <a href="#" class="btn btn-primary">Team Sales Performance</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                <span class="pull-right">
+                    <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                </span>
+            </div>
+
+        </div>
+    </div>-->
+
+</div>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>

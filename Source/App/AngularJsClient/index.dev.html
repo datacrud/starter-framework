@@ -1,0 +1,129 @@
+﻿<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <title>Home</title>
+
+    <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="Content/ng-grid.min.css" rel="stylesheet"/>
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/angular-busy.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="Content/datatables.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="app/styles/style.css" />
+
+
+</head>
+<body ng-app="app">
+
+    <header ng-include="'app/views/nav.html'"></header>
+
+    <div class="container">
+        <div class="alertStyle alert-block text-center fade out" ng-class="{in: alert.isAlert}">
+            <span ng-hide="alert.autoHide">
+                <uib-alert type="{{alert.type}}" close="alert.close()">{{alert.msg}} </uib-alert>
+            </span>
+            <span ng-show="alert.autoHide">
+                <uib-alert type="{{alert.type}}">{{alert.msg}}</uib-alert>
+            </span>
+        </div>
+    </div>
+
+    <div ui-view class="container-fluid slide"></div>    
+    
+    <footer ng-include="'app/views/footer.html'"></footer>
+
+
+
+<!-- Scripts -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>    
+
+<!-- angular -->
+    <script src="Scripts/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>--> 
+    <script src="Scripts/angular-animate.min.js"></script>
+
+<!-- bootstrap-table -->
+    <script src="Scripts/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="Scripts/bootstrap-table/bootstrap-table-angular.min.js"></script>
+
+<!-- data-table -->
+    <script src="Scripts/data-table/datatables.min.js"></script>
+    <script src="Scripts/data-table/dataTables.bootstrap.min.js"></script>
+
+
+<!-- angular-ui-bootstrap -->
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/angular-ui/sortable.js"></script>
+
+
+<!-- grid-grid -->
+    <script src="Scripts/ng-grid.min.js"></script>
+
+<!-- checklist -->
+    <script src="Scripts/checklist-model.js"></script>
+
+<!-- busy screen -->
+    <script src="Scripts/angular-busy.min.js"></script>
+
+
+
+<!-- app scripts -->
+    <script src="app/scripts/app.config.js"></script>
+    <script src="app/scripts/auth/auth.config.js"></script>
+    <script src="app/scripts/user/user.config.js"></script>
+    <script src="app/scripts/root/root.config.js"></script>
+    <script src="app/scripts/home/home.config.js"></script>
+    <script src="app/scripts/dashboard/dashboard.config.js"></script>
+
+
+    <script src="app/scripts/app.directive.js"></script>
+
+
+    <script src="app/scripts/app.service.js"></script>
+    <script src="app/scripts/url.service.js"></script>
+    <script src="app/scripts/alert.service.js"></script>
+    <script src="app/scripts/localstorage.service.js"></script>
+    <script src="app/scripts/http.service.js"></script>
+    <script src="app/scripts/auth/auth.service.js"></script>    
+    <script src="app/scripts/auth/role/role.service.js"></script>
+    <script src="app/scripts/auth/resource/resource.service.js"></script>
+    <script src="app/scripts/auth/permission/permission.service.js"></script>
+    <script src="app/scripts/user/user.service.js"></script>
+    <script src="app/scripts/root/root.controller.js"></script>
+    <script src="app/scripts/home/home.controller.js"></script>
+    <script src="app/scripts/dashboard/dashboard.service.js"></script>
+
+
+    <script src="app/scripts/app.controller.js"></script>
+    <script src="app/scripts/auth/auth.controller.js"></script>
+    <script src="app/scripts/auth/role/role.controller.js"></script>
+    <script src="app/scripts/auth/resource/resource.controller.js"></script>
+    <script src="app/scripts/auth/permission/permission.controller.js"></script>
+    <script src="app/scripts/user/user.controller.js"></script>
+    <script src="app/scripts/dashboard/dashboard.controller.js"></script>
+    <script src="app/scripts/about/about.controller.js"></script>
+    <script src="app/scripts/contact/contact.controller.js"></script>
+
+
+    <script src="app/scripts/modal/confirm.modal.controller.js"></script>
+
+<!-- app scripts end -->
+
+
+
+    <script>
+        $(document).on('click', function() {
+            $('.collapse').collapse('hide');
+        });
+    </script> 
+</body>
+</html>

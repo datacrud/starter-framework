@@ -1,0 +1,62 @@
+﻿
+<div class="row">
+
+    <div class="form-horizontal form-group">
+
+        <form ng-submit="search()">
+            <div class="col col-xs-12 col-sm-8 col-md-4 col-lg-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search by Name, Id" ng-model="search.key" required="required">
+                    <span type="submit" class="input-group-addon"><a style="cursor: pointer; text-decoration: none" class="glyphicon glyphicon-search btn-floating" ng-click="search()"></a></span>
+                </div>
+            </div>
+            <br class="visible-xs-block" />
+            <br class="visible-xs-block" />
+            <div class="col col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                <select class="form-control pull-right" ng-options="i.Id as i.Name for i in filters" ng-model="search.filterId" ng-change="search()"></select>
+            </div>
+        </form>
+        <br class="visible-sm-block visible-xs-block" />
+        <br class="visible-sm-block visible-xs-block" />
+        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="btn-group btn-group-justified" role="group">
+                <a ui-sref="#" class="btn btn-block btn-success">Item</a>
+                <a ui-sref="#" class="btn btn-block btn-success">Item</a>
+                <a ui-sref="#" class="btn btn-block btn-success">Item</a>
+                <a ui-sref="#" class="btn btn-block btn-success">Item</a>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+
+
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="table-responsive" >
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>            
+
+
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+</div>
+

@@ -1,0 +1,181 @@
+
+.alert-block {
+    position:absolute;width:100%;z-index:0
+}
+.alert-block.in {
+    z-index:2000
+}
+.alert-block .alert {
+    display:inline-block;position:relative
+}
+.alert-block .alert .close {
+    top:-2px;right:2px;position:absolute
+}
+.well .close {
+    position:absolute;top:0;right:5px
+}
+
+.alert,.navbar,.pagination,.progress,.table,.well,blockquote {
+    margin-bottom:5px
+}
+.alert {
+    padding:8px 14px
+}
+
+.alertStyle {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    top: 10%;
+    height: 10px !important;
+    width: auto !important;
+    z-index: 999999;
+    border: 0;
+}
+
+.alert {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    -ms-border-radius: 0;    
+    -webkit-bordar-radius: 0;
+    -moz-bordar-radius: 0;
+    border-radius: 0;    
+    border: brown solid 1px;
+}
+
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+    background: #f5f5f5 !important;
+}
+
+
+body{
+	padding-top:80px;
+	padding-bottom:50px;
+	background:#EBEBEB;
+}
+
+
+.navbar {
+	border-radius: 0;
+	background: #006A4E;
+	margin-bottom: 5px;
+}
+.navbar-brand{
+	font-size: 25px;
+	
+}
+
+.navbar-inverse .navbar-brand{
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-brand:hover{
+	color: #c8e6c9;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+	color: #c8e6c9;
+}
+
+#middle-menu{ 
+	margin-bottom: 5px;
+}
+
+
+.po-table > tbody > tr > td{
+	border: 0;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px !important;
+  color: #fff;
+  padding-top:10px;
+  /*background-color: #388e3c;*/
+  background-color: #006A4E;
+  z-index: 1000;
+}
+
+
+.dropdown-menu {
+    background: #006a4e !important;
+}
+
+.dropdown-menu li a:hover {
+    background: #2e8b57;
+    color: #000000;
+}
+
+.form-control {
+    background: #f5f5f5 !important;
+}
+
+.form-horizontal .control-label{
+/* text-align:right; */
+text-align:left !important;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+	
+	/* Force table to not be like tables anymore */
+	#no-more-tables table, 
+	#no-more-tables thead, 
+	#no-more-tables tbody, 
+	#no-more-tables th, 
+	#no-more-tables td, 
+	#no-more-tables tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#no-more-tables thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#no-more-tables tr { border: 1px solid #ccc; }
+ 
+	#no-more-tables td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#no-more-tables td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#no-more-tables td:before { content: attr(data-title); }
+}

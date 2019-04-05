@@ -1,0 +1,124 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Client", "01 Client", "{204B0AD5-5B0B-4099-8AE1-39C3E4399035}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Server", "02 Server", "{168703EB-4545-48D4-B252-1D19F4ED115B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Service", "03 Service", "{BF783329-30C3-47A1-91F2-5ABBF59B8FA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Repository", "04 Repository", "{28CF6811-5C18-451F-B914-2148EF756E36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Models", "05 Models", "{6FF451E9-CA84-4064-900F-D67F1AEF85B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{A78399CF-A451-415E-A96F-C169520357F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Tests", "Server.Tests\Server.Tests.csproj", "{A0B157F7-BAB9-4048-BC40-A419E475003D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{AED98620-CAD3-4903-A174-07AEAA008445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{FF0189B2-AD12-4349-9248-7F4140F67B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestModel", "RequestModel\RequestModel.csproj", "{B48E55D9-2911-4C1F-A1CE-3C36B469DADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{36853CAD-62F6-4BDF-88E3-5BA573288E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests", "Service.Tests\Service.Tests.csproj", "{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests", "Repository.Tests\Repository.Tests.csproj", "{60288C12-7599-4896-B1A2-D3278A4819B4}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularJsClient", "AngularJsClient\", "{FD64C481-E7B6-4BFC-988A-88367725E7D4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55464"
+		Debug.AspNetCompiler.PhysicalPath = "AngularJsClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55464\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55464"
+		Release.AspNetCompiler.PhysicalPath = "AngularJsClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55464\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55464"
+		SlnRelativePath = "AngularJsClient\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 Core", "07 Core", "{B037D903-C8C0-4B0F-A7EA-997A47B62373}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Security", "06 Security", "{A8C99129-8599-4BA1-9CD4-A41FB84FF2AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A78399CF-A451-415E-A96F-C169520357F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78399CF-A451-415E-A96F-C169520357F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78399CF-A451-415E-A96F-C169520357F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78399CF-A451-415E-A96F-C169520357F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B157F7-BAB9-4048-BC40-A419E475003D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B157F7-BAB9-4048-BC40-A419E475003D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B157F7-BAB9-4048-BC40-A419E475003D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B157F7-BAB9-4048-BC40-A419E475003D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED98620-CAD3-4903-A174-07AEAA008445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED98620-CAD3-4903-A174-07AEAA008445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED98620-CAD3-4903-A174-07AEAA008445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED98620-CAD3-4903-A174-07AEAA008445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF0189B2-AD12-4349-9248-7F4140F67B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0189B2-AD12-4349-9248-7F4140F67B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0189B2-AD12-4349-9248-7F4140F67B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0189B2-AD12-4349-9248-7F4140F67B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48E55D9-2911-4C1F-A1CE-3C36B469DADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48E55D9-2911-4C1F-A1CE-3C36B469DADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48E55D9-2911-4C1F-A1CE-3C36B469DADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48E55D9-2911-4C1F-A1CE-3C36B469DADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36853CAD-62F6-4BDF-88E3-5BA573288E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36853CAD-62F6-4BDF-88E3-5BA573288E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36853CAD-62F6-4BDF-88E3-5BA573288E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36853CAD-62F6-4BDF-88E3-5BA573288E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60288C12-7599-4896-B1A2-D3278A4819B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60288C12-7599-4896-B1A2-D3278A4819B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60288C12-7599-4896-B1A2-D3278A4819B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60288C12-7599-4896-B1A2-D3278A4819B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD64C481-E7B6-4BFC-988A-88367725E7D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD64C481-E7B6-4BFC-988A-88367725E7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD64C481-E7B6-4BFC-988A-88367725E7D4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD64C481-E7B6-4BFC-988A-88367725E7D4}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A78399CF-A451-415E-A96F-C169520357F2} = {168703EB-4545-48D4-B252-1D19F4ED115B}
+		{A0B157F7-BAB9-4048-BC40-A419E475003D} = {168703EB-4545-48D4-B252-1D19F4ED115B}
+		{AED98620-CAD3-4903-A174-07AEAA008445} = {BF783329-30C3-47A1-91F2-5ABBF59B8FA5}
+		{584C780F-0EF6-4B21-A6F5-9EA3B6A88F0C} = {28CF6811-5C18-451F-B914-2148EF756E36}
+		{FF0189B2-AD12-4349-9248-7F4140F67B99} = {6FF451E9-CA84-4064-900F-D67F1AEF85B3}
+		{B48E55D9-2911-4C1F-A1CE-3C36B469DADA} = {6FF451E9-CA84-4064-900F-D67F1AEF85B3}
+		{36853CAD-62F6-4BDF-88E3-5BA573288E38} = {6FF451E9-CA84-4064-900F-D67F1AEF85B3}
+		{D76A944B-41B8-4D5A-8CB8-C39A3AC2D007} = {BF783329-30C3-47A1-91F2-5ABBF59B8FA5}
+		{60288C12-7599-4896-B1A2-D3278A4819B4} = {28CF6811-5C18-451F-B914-2148EF756E36}
+		{FD64C481-E7B6-4BFC-988A-88367725E7D4} = {204B0AD5-5B0B-4099-8AE1-39C3E4399035}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0C70BC9-C8AA-448C-BC99-FA47861BDCD9}
+	EndGlobalSection
+EndGlobal

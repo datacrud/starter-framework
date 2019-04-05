@@ -1,0 +1,96 @@
+﻿<div class="row" cg-busy="promise">
+
+    <div>
+        <button ui-sref="root.dashboard" class="btn btn-link" data-toggle="tooltip" data-placement="right" title="Back"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    </div>
+
+    <div class="col col-xs-12 col-sm-5 col-md-5 col-lg-5">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add Role</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" ng-submit="save()">
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">Role Name :</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control" ng-model="model.Name" required="required" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col col-xs-12 col-sm-4 col-md-4 col-lg-4">&nbsp;</label>
+                        <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <button type="submit" ng-show="!isUpdateMode" class="btn btn-floating btn-info">Save</button>
+                            <button type="submit" ng-show="isUpdateMode" class="btn btn-floating btn-info">Update</button>
+                            <button type="button" ng-show="isUpdateMode" class="btn btn-floating btn-warning" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>        
+
+    <div class="col col-xs-12 col-sm-7 col-md-7 col-lg-7">
+        <div class="panel panel-info">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h3 class="panel-title">Roles</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <form ng-submit="search()">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search by Role Name" ng-model="search.key" required="required">
+                            <span type="submit" class="input-group-addon"><a style="cursor: pointer; text-decoration: none" class="glyphicon glyphicon-search btn-floating" ng-click="search()"></a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div id="no-more-tables">
+                <table class="table table-responsive table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th><span class="glyphicon glyphicon-pencil"></span></th>
+                            <th><span class="glyphicon glyphicon-remove"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="l in list track by $index">
+                            <td ng-show="false">{{l.Id}}</td>
+                            <td data-title="SL: ">{{$index + 1}}</td>
+                            <td data-title="Name: ">{{l.Name}}</td>
+                            <td data-title="Edit: ">
+                                <a class="glyphicon glyphicon-edit" style="cursor: pointer;" ng-click="edit(l.Id)"></a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </td>
+                            <td data-title="Delete: ">
+                                <a class="glyphicon glyphicon-trash" style="cursor: pointer;" ng-click="remove('', l, 'delete')"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel-footer">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>

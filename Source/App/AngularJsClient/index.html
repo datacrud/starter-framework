@@ -1,0 +1,92 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Home</title>
+
+    <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ng-grid.min.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/angular-busy.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-table.min.css" rel="stylesheet" />
+
+
+    <link href="dist/styles/v0.0.1/style.min.css" rel="stylesheet" />
+
+</head>
+<body ng-app="app">
+
+    <header ng-include="'dist/views/v0.0.1/nav.html'"></header>
+
+    <div class="container">
+        <div class="alertStyle alert-block text-center fade out" ng-class="{in: alert.isAlert}">
+            <span ng-hide="alert.autoHide">
+                <uib-alert type="{{alert.type}}" close="alert.close()">{{alert.msg}} </uib-alert>
+            </span>
+            <span ng-show="alert.autoHide">
+                <uib-alert type="{{alert.type}}">{{alert.msg}}</uib-alert>
+            </span>
+        </div>
+    </div>
+
+    <div ui-view class="container-fluid slide"></div>
+
+    <footer ng-include="'dist/views/v0.0.1/footer.html'"></footer>
+
+
+<!-- jquey -->
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+
+<!-- bootstrap -->
+    <script src="Scripts/bootstrap.min.js"></script>
+
+<!-- angular -->
+    <script src="Scripts/angular.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>-->
+    <script src="Scripts/angular-animate.min.js"></script>
+
+<!-- bootstrap-table -->
+    <script src="Scripts/bootstrap-table.min.js"></script>
+    <script src="Scripts/bootstrap-table-angular.min.js"></script>
+
+
+<!-- angular-ui-bootstrap -->
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/angular-ui/sortable.js"></script>
+
+
+<!-- grid-grid -->
+    <script src="Scripts/ng-grid.min.js"></script>
+
+
+<!-- checklist -->
+    <script src="Scripts/checklist-model.js"></script>
+
+<!-- busy screen -->
+    <script src="Scripts/angular-busy.min.js"></script>
+
+
+
+
+<!-- app scripts -->
+    <script src="dist/scripts/v0.0.1/config-scripts.min.js"></script>
+    <script src="dist/scripts/v0.0.1/directive-scripts.min.js"></script>
+    <script src="dist/scripts/v0.0.1/service-scripts.min.js"></script>
+    <script src="dist/scripts/v0.0.1/controller-scripts.min.js"></script>
+    
+
+
+
+    <script>
+        $(document).on('click',function(){
+            $('.collapse').collapse('hide');
+        })
+    </script>
+</body>
+</html>
