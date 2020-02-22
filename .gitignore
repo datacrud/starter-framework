@@ -1,5 +1,10 @@
-Source/**/**/node_modules/
-Source/**/**/bin/
-Source/**/**/obj/
+**/**/node_modules/
+**/**/bin/
+**/**/obj/
+Source/App/Server/App_Data/Logs/
+**/**/.vs/
+**/**/bower_components/
 Source/App/packages/
-Source/App/.vs/
+Source/App/Server/Export/
+Source/App/Server/Upload/
+Source/App/Client/Scripts/

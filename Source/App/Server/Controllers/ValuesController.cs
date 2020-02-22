@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Project.Server.Controllers
 {
+    [RoutePrefix("api/Values")]
     public class ValuesController : ApiController
-    {
+    {        
+                
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -35,5 +33,7 @@ namespace Project.Server.Controllers
         public void Delete(int id)
         {
         }
+
+       
     }
 }

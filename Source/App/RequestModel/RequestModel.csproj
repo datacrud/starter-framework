@@ -30,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,14 +43,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseRequestModel.cs" />
+    <Compile Include="Bases\HaveTenantIdCompanyIdRequestModelBase.cs" />
+    <Compile Include="Bases\HaveTenantIdRequestModelBase.cs" />
+    <Compile Include="Bases\RequestModelBase.cs" />
+    <Compile Include="MultiTenants\FiscalYearRequestModel.cs" />
+    <Compile Include="MultiTenants\LoginAttemptRequestModel.cs" />
+    <Compile Include="Emailing\MonthlyEmailBalanceRequestModel.cs" />
+    <Compile Include="Emailing\EmailNotificationLogRequestModel.cs" />
+    <Compile Include="Emailing\EmailConfirmationRequestModel.cs" />
+    <Compile Include="RfqRequestModel.cs" />
+    <Compile Include="MultiTenants\CompanySettingsRequestModel.cs" />
+    <Compile Include="MultiTenants\FeatureRequestModel.cs" />
+    <Compile Include="MultiTenants\SubscriptionPaymentRequestModel.cs" />
+    <Compile Include="MultiTenants\PaymentConfirmationRequestModel.cs" />
+    <Compile Include="MultiTenants\SubscriptionRequestModel.cs" />
+    <Compile Include="MultiTenants\EditionRequestModel.cs" />
+    <Compile Include="MultiTenants\BranchRequestModel.cs" />
+    <Compile Include="MultiTenants\CompanyRequestModel.cs" />
+    <Compile Include="MultiTenants\PartnerRequestModel.cs" />
+    <Compile Include="MultiTenants\TenantRequestModel.cs" />
+    <Compile Include="Auditing\AuditLogRequestModel.cs" />
+    <Compile Include="CustomerRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bases\HaveTenantIdCompanyIdBranchIdRequestModelBase.cs" />
+    <Compile Include="EmployeeRequestModel.cs" />
+    <Compile Include="SupplierRequestModel.cs" />
+    <Compile Include="WarehouseRequestModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6F3C1379-5DD6-4A0C-A706-9E8183B76DC1}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{FF0189B2-AD12-4349-9248-7F4140F67B99}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filing\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

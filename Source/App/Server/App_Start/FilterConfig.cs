@@ -1,5 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Project.Core.Handlers;
+using Project.Server.Filters;
 
 namespace Project.Server
 {
@@ -8,6 +9,8 @@ namespace Project.Server
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //filters.Add(new UiFriendlyExceptionFilterAttribute());
+            //filters.Add(new TenantCheckerFilter());
         }
     }
 }

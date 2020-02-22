@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F3C1379-5DD6-4A0C-A706-9E8183B76DC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project.Core</RootNamespace>
+    <AssemblyName>Project.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.1.0.0.22\lib\net20\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.9\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.9\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.9.0\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.1.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Typesafe.Mailgun, Version=2.0.0.2135, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mnailgun.2.0.0\lib\4.0\Typesafe.Mailgun.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.3\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.3\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConst.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="CurrentUser\CurrentUser.cs" />
+    <Compile Include="CurrentUser\ICurrentUser.cs" />
+    <Compile Include="DataFilter.cs" />
+    <Compile Include="DomainBase\Entity.cs" />
+    <Compile Include="DomainBase\HaveTenantAndCompanyEntity.cs" />
+    <Compile Include="DomainBase\HaveTenantCompanyAndBranchEntity.cs" />
+    <Compile Include="DomainBase\HaveTenantEntity.cs" />
+    <Compile Include="DomainBase\IEntity.cs" />
+    <Compile Include="DomainBase\IHaveBranch.cs" />
+    <Compile Include="DomainBase\IHaveCompany.cs" />
+    <Compile Include="DomainBase\IHaveIsActive.cs" />
+    <Compile Include="DomainBase\IHaveTenant.cs" />
+    <Compile Include="DomainBase\IMayHaveOrder.cs" />
+    <Compile Include="DomainBase\IMayHaveUserReference.cs" />
+    <Compile Include="Email\EmailSender.cs" />
+    <Compile Include="Email\IEmailSender.cs" />
+    <Compile Include="Email\EmailService.cs" />
+    <Compile Include="Email\IEmailService.cs" />
+    <Compile Include="Enums\DropdownType.cs" />
+    <Compile Include="Enums\Framework\BranchType.cs" />
+    <Compile Include="Enums\Framework\BusinessType.cs" />
+    <Compile Include="Enums\Framework\CompanyHierarchy.cs" />
+    <Compile Include="Enums\CustomerType.cs" />
+    <Compile Include="Enums\DashboardAlertType.cs" />
+    <Compile Include="Enums\EmailType.cs" />
+    <Compile Include="Enums\EmployeeType.cs" />
+    <Compile Include="Enums\Framework\EntityName.cs" />
+    <Compile Include="Enums\Framework\EntityType.cs" />
+    <Compile Include="Enums\Framework\FeatureValueType.cs" />
+    <Compile Include="Enums\Framework\AccessLevel.cs" />
+    <Compile Include="Enums\Framework\ActionType.cs" />
+    <Compile Include="Enums\Framework\AutogenType.cs" />
+    <Compile Include="Enums\Framework\DataType.cs" />
+    <Compile Include="Enums\Framework\DeleteActionType.cs" />
+    <Compile Include="Enums\Framework\PagingDataType.cs" />
+    <Compile Include="Enums\Framework\ResourceOwner.cs" />
+    <Compile Include="Enums\Framework\SearchType.cs" />
+    <Compile Include="Enums\HostSettingValueType.cs" />
+    <Compile Include="Enums\LoginAttemptStatus.cs" />
+    <Compile Include="Enums\Month.cs" />
+    <Compile Include="Enums\PartnershipType.cs" />
+    <Compile Include="Enums\PaymentMethod.cs" />
+    <Compile Include="Enums\RfqStatus.cs" />
+    <Compile Include="Enums\SchedulingPeriod.cs" />
+    <Compile Include="Enums\SubscriptionPackage.cs" />
+    <Compile Include="Enums\SubscriptionPaymentMethod.cs" />
+    <Compile Include="Enums\SubscriptionPaymentStatus.cs" />
+    <Compile Include="Enums\SubscriptionStatus.cs" />
+    <Compile Include="Enums\SupplierType.cs" />
+    <Compile Include="Enums\TypeAHeadType.cs" />
+    <Compile Include="Enums\WarehouseType.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Extensions\Framework\DynamicQueryExtension.cs" />
+    <Compile Include="Extensions\Framework\ExpressionExtension.cs" />
+    <Compile Include="Extensions\Framework\QueryExtension.cs" />
+    <Compile Include="Extensions\IdentityExtension.cs" />
+    <Compile Include="Extensions\NumberExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\ResourceExtension.cs" />
+    <Compile Include="Extensions\StringExtention.cs" />
+    <Compile Include="Extensions\UrlExtention.cs" />
+    <Compile Include="Handlers\HttpStatusCodeOutput.cs" />
+    <Compile Include="Handlers\UiFriendlyException.cs" />
+    <Compile Include="Helpers\BarcodeHelper.cs" />
+    <Compile Include="Helpers\NavigationContractResolver.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\Framework\ExpressionParameterRewriter.cs" />
+    <Compile Include="Helpers\StaticContentProvider.cs" />
+    <Compile Include="Helpers\TenantHelper.cs" />
+    <Compile Include="InWords\InWords.cs" />
+    <Compile Include="IoC\IocManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ConnectionStringProvider.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="RequestModels\EmailConfirmationRequestModel.cs" />
+    <Compile Include="RequestModels\PageFilterInput.cs" />
+    <Compile Include="ResponseModels\PageResultOutput.cs" />
+    <Compile Include="Session\IAppSession.cs" />
+    <Compile Include="Session\AppSession.cs" />
+    <Compile Include="Session\AppSessionModel.cs" />
+    <Compile Include="StaticResource\AlertClass.cs" />
+    <Compile Include="StaticResource\CssHelpers.cs" />
+    <Compile Include="StaticResource\Models\StaticEditionFeatureDto.cs" />
+    <Compile Include="StaticResource\Models\StaticFeatureDto.cs" />
+    <Compile Include="StaticResource\Models\StaticResourceDto.cs" />
+    <Compile Include="StaticResource\Models\StaticRoleDto.cs" />
+    <Compile Include="StaticResource\SmsHelper.cs" />
+    <Compile Include="StaticResource\StaticBranch.cs" />
+    <Compile Include="StaticResource\StaticCompany.cs" />
+    <Compile Include="StaticResource\StaticCustomer.cs" />
+    <Compile Include="StaticResource\StaticEdition.cs" />
+    <Compile Include="StaticResource\StaticEditionFeature.cs" />
+    <Compile Include="StaticResource\StaticFeature.cs" />
+    <Compile Include="StaticResource\StaticResource.cs" />
+    <Compile Include="StaticResource\StaticRoles.cs" />
+    <Compile Include="StaticResource\StaticSubscription.cs" />
+    <Compile Include="StaticResource\StaticSupplier.cs" />
+    <Compile Include="StaticResource\StaticTenant.cs" />
+    <Compile Include="StaticResource\StaticUsers.cs" />
+    <Compile Include="StaticResource\StaticWarehouse.cs" />
+    <Compile Include="UoW\IShouldInitialize.cs" />
+    <Compile Include="UoW\ITransactionUnitOfWork.cs" />
+    <Compile Include="UoW\IUnitOfWork.cs" />
+    <Compile Include="UoW\IUnitOfWorkFactory.cs" />
+    <Compile Include="UoW\TransactionScopeUnitOfWork.cs" />
+    <Compile Include="UoW\TransactionScopeUnitOfWorkFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

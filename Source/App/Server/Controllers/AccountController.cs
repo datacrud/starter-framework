@@ -13,9 +13,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Project.Server.Models;
 using Project.Server.Providers;
 using Project.Server.Results;
+using Security.Models.Models;
+using Security.Models.ViewModels;
+using Security.Server.Managers;
+using Security.Server.Providers;
+using Security.Server.Startup;
 
 namespace Project.Server.Controllers
 {
@@ -24,24 +28,29 @@ namespace Project.Server.Controllers
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
-        private ApplicationUserManager _userManager;
+        private UserManager _userManager;
 
         public AccountController()
         {
+            var tenantId = HttpContext.Current.Request.Headers["TenantId"];
+            _userManager.SetTenantId(string.IsNullOrWhiteSpace(tenantId) ? null : tenantId);
         }
 
-        public AccountController(ApplicationUserManager userManager,
+        public AccountController(UserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
+
+            var tenantId = HttpContext.Current.Request.Headers["TenantId"];
+            UserManager.SetTenantId(string.IsNullOrWhiteSpace(tenantId) ? null : tenantId);
         }
 
-        public ApplicationUserManager UserManager
+        public UserManager UserManager
         {
             get
             {
-                return _userManager ?? Request.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? Request.GetOwinContext().GetUserManager<UserManager>();
             }
             private set
             {
@@ -66,10 +75,13 @@ namespace Project.Server.Controllers
             };
         }
 
+        
         // POST api/Account/Logout
         [Route("Logout")]
+        [HttpPost]
         public IHttpActionResult Logout()
         {
+
             Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             return Ok();
         }
@@ -78,7 +90,7 @@ namespace Project.Server.Controllers
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
-            IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            User user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
             if (user == null)
             {
@@ -250,7 +262,7 @@ namespace Project.Server.Controllers
                 return new ChallengeResult(provider, this);
             }
 
-            ApplicationUser user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
+            User user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
                 externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
@@ -306,7 +318,7 @@ namespace Project.Server.Controllers
                     {
                         provider = description.AuthenticationType,
                         response_type = "token",
-                        client_id = Startup.PublicClientId,
+                        client_id = AuthStartup.PublicClientId,
                         redirect_uri = new Uri(Request.RequestUri, returnUrl).AbsoluteUri,
                         state = state
                     }),
@@ -328,7 +340,7 @@ namespace Project.Server.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -357,7 +369,7 @@ namespace Project.Server.Controllers
                 return InternalServerError();
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user);
             if (!result.Succeeded)

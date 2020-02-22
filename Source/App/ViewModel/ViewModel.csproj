@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +12,8 @@
     <AssemblyName>Project.ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=13.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.13.0.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,11 +63,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseResponseModel.cs" />
-    <Compile Include="DropdownViewModel.cs" />
+    <Compile Include="Bases\HaveTenantIdCompanyIdViewModelBase.cs" />
+    <Compile Include="Bases\HaveTenantIdViewModelBase.cs" />
+    <Compile Include="Bases\ViewModelBase.cs" />
+    <Compile Include="Responses\BooleanResponse.cs" />
+    <Compile Include="MultiTenants\CompanySettingsAccountInfoViewModel.cs" />
+    <Compile Include="MultiTenants\CompanySettingsViewModel.cs" />
+    <Compile Include="Emailing\EmailNotificationLogViewModel.cs" />
+    <Compile Include="Emailing\EmailResponseModel.cs" />
+    <Compile Include="MultiTenants\FeatureViewModel.cs" />
+    <Compile Include="Filing\FileUploadResponseModel.cs" />
+    <Compile Include="Filing\FileViewModel.cs" />
+    <Compile Include="MultiTenants\FiscalYearViewModel.cs" />
+    <Compile Include="MultiTenants\LoginAttemptViewModel.cs" />
+    <Compile Include="Emailing\MonthlyEmailBalanceViewModel.cs" />
+    <Compile Include="Sessions\ApplicationSessionViewModel.cs" />
+    <Compile Include="Sessions\PermissionViewModel.cs" />
+    <Compile Include="Sessions\SessionViewModel.cs" />
+    <Compile Include="Sessions\SubscriptionSessionViewModel.cs" />
+    <Compile Include="Sessions\UserSessionViewModel.cs" />
+    <Compile Include="Sms\SmsResponseModel.cs" />
+    <Compile Include="MultiTenants\PartnerViewModel.cs" />
+    <Compile Include="MultiTenants\SubscriptionPaymentViewModel.cs" />
+    <Compile Include="MultiTenants\BranchViewModel.cs" />
+    <Compile Include="MultiTenants\CompanyViewModel.cs" />
+    <Compile Include="MultiTenants\EditionViewModel.cs" />
+    <Compile Include="RfqViewModel.cs" />
+    <Compile Include="MultiTenants\SubscriptionViewModel.cs" />
+    <Compile Include="MultiTenants\TenantCurrentSubscriptionInfoViewModel.cs" />
+    <Compile Include="MultiTenants\TenantViewModel.cs" />
+    <Compile Include="Auditing\AuditLogViewModel.cs" />
+    <Compile Include="Lookups\TypeAHeadViewModel.cs" />
+    <Compile Include="DashboardViewModel.cs" />
+    <Compile Include="EmployeeViewModel.cs" />
+    <Compile Include="SupplierViewModel.cs" />
+    <Compile Include="CustomerViewModel.cs" />
+    <Compile Include="Responses\ResponseModel.cs" />
+    <Compile Include="Bases\HaveTenantIdCompanyIdBranchIdViewModelBase.cs" />
+    <Compile Include="Lookups\DropdownViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarehouseViewModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6F3C1379-5DD6-4A0C-A706-9E8183B76DC1}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{FF0189B2-AD12-4349-9248-7F4140F67B99}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Security.Models\Security.Models.csproj">
+      <Project>{56833BCA-CA7C-4637-9EC8-C78B91A3ABDF}</Project>
+      <Name>Security.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
